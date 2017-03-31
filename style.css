@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+}
+
+.grid {
+    display: grid;
+    grid-template-rows: [promo-end] 30px [header-end] 100px [footer-start] auto [footer-end] 400px; 
+    grid-template-columns: [left-col-end] 250px [right-col-start] calc(100% - 500px) [right-col-end] 250px;
+}
+
+.promo {
+    background-color: black;
+    grid-column: 1/4;
+    grid-row: 1/2;
+    position: fixed;
+    left: 0;
+    width: 100%;
+    height: 30px;
+}
+
+.siteHeader {
+    background-color: lightgray;
+    grid-column: 2/3;
+    grid-row: 2/3;
+    position: fixed;
+    top: 30px;
+    left: 250px;
+    width: calc(100% - 500px);
+    height: 100px;
+}
+
+.storeMenuContainer {
+    background-color: pink;
+    grid-column: 1/2;
+    grid-row: 2/4;
+}
+
+.main {
+    background-color: lightblue;
+    grid-column: 2/3;
+    grid-row:3/4;
+}
+
+.userMenuContainer {
+    background-color: mediumseagreen;
+    grid-column: 3/4;
+    grid-row: 2/4;
+}
+
+.siteFooter {
+    background-color: rebeccapurple;
+    grid-column: 1/4;
+    grid-row: 4/5;
+}
