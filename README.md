@@ -1,1 +1,1 @@
-Super minimal website boilerplate
+Css grid test with IE support, sticky elements and promo strip toggle
