@@ -1,10 +1,14 @@
-var stickyElements = Array.from(document.querySelectorAll('.promo, .siteHeader'));
+var stickyElements = document.querySelectorAll('.promo, .siteHeader');
 
 document.querySelector('#toggleSticky')
-    .addEventListener('click', e => stickyElements.forEach(el => 
-        el.classList.toggle('sticky')
-    ));
+    .addEventListener('click', function(e) {
+        [].forEach.call(stickyElements, function(el) {
+            el.classList.toggle('sticky');
+        })
+    });
 
 document.querySelector('#togglePromo')
-    .addEventListener('click', e => document.body.classList.toggle('promoOn'));
+    .addEventListener('click', function(e) {
+        document.body.classList.toggle('promoOn')
+    });
 
