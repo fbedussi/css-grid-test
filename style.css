@@ -22,29 +22,20 @@ body {
 }
 
 .grid {
-       display: -ms-grid;
     display: grid;
     grid-template-rows: [promo-end] var(--promoHeight) [header-end] var(--headerHeight) [footer-start] auto [footer-end] 300px; 
-    grid-template-columns: [left-col-end] 250px [right-col-start] calc(100% - 500px) [right-col-end] 250px;
+    grid-template-columns: [left-col-end] 3fr [right-col-start] 10fr [right-col-end] 3fr;
     grid-template-areas:    
         "promo promo promo"
         "leftCol header rightCol"
         "leftCol main rightCol"
         "footerArea footerArea footerArea";
-
-    -ms-grid-rows: 30px 100px auto 300px; 
-    -ms-grid-columns: 250px calc(100% - 500px) 250px;
 }
 
 .promo {
     background-color: black;
     /*grid-column: 1/4;
     grid-row: 1/2;*/
-       -ms-grid-row: 1;
-    -ms-grid-row-span: 1;
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 3;
- 
     grid-area: promo;
 }
 
@@ -61,18 +52,13 @@ body {
     /*grid-column: 2/3;
     grid-row: 2/3;*/
     grid-area: header;
-    /*height: 100px;*/
-       -ms-grid-row: 2;
-    -ms-grid-row-span: 1;
-    -ms-grid-column: 2;
-    -ms-grid-column-span: 1;
 }
 
 .siteHeader.sticky {
     position: fixed;
     top: var(--promoHeight);
-    left: 250px;
-    width: calc(100% - 500px);    
+    left: calc(100% / 16 * 3);
+    width: calc(100% / 16 * 10);    
     height: 100px;
     height: var(--headerHeight);
 }
@@ -82,10 +68,6 @@ body {
     /*grid-column: 1/2;
     grid-row: 2/4;*/
     grid-area: leftCol;
-       -ms-grid-row: 2;
-    -ms-grid-row-span: 2;
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 1;
 }
 
 .main {
@@ -93,10 +75,6 @@ body {
     /*grid-column: 2/3;
     grid-row:3/4;*/
     grid-area: main;
-       -ms-grid-row: 3;
-    -ms-grid-row-span: 1;
-    -ms-grid-column: 2;
-    -ms-grid-column-span: 1;
     display: block;
     width: 100%;
 }
@@ -106,10 +84,6 @@ body {
     /*grid-column: 3/4;
     grid-row: 2/4;*/
     grid-area: rightCol;
-     -ms-grid-row: 2;
-    -ms-grid-row-span: 2;
-    -ms-grid-column: 3;
-    -ms-grid-column-span: 1;
 }
 
 .siteFooter {
@@ -117,8 +91,4 @@ body {
     /*grid-column: 1/4;
     grid-row: 4/5;*/
     grid-area: footerArea;
-    -ms-grid-row: 4;
-    -ms-grid-row-span: 1;
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 3;
 }
